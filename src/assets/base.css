@@ -1,0 +1,14 @@
+:root {
+  /* General styles */
+  --dark-bg: #1a1a1a;
+  --dark-mode-text-color: #fff;
+  --theme-main: #4a90e2;
+  --theme-dark-blue: #03256c;
+  --theme-mid-blue: #2541b2;
+  --theme-blue-green: #1768ac;
+
+  /* Navbar styles */
+  --nav-dark-color: #0606065c;
+  --nav-light-color: #ffffff80;
+  --border-color-dark: #3e3e3e;
+}
