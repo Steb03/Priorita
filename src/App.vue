@@ -1,11 +1,10 @@
 <script setup>
 import { ref, watch } from "vue";
 import Navbar from "@/components/Navbar.vue";
-import MainDiv from "@/components/MainDiv.vue";
+import ListDiv from "@/components/ListDiv.vue";
+import AddTaskUI from '@/components/AddTaskUI.vue';
 
 let theme = ref("light");
-
-let addTodo = ref("");
 
 watch(theme, (newTheme) => {
   if (newTheme === "dark") {
@@ -20,7 +19,11 @@ watch(theme, (newTheme) => {
 
 <template>
   <Navbar @theme="(t) => (theme = t)" />
-  <MainDiv :theme="theme" />
+  <main>
+    <h1 :class="theme">Start your day with a goal in mind.</h1>
+    <AddTaskUI :theme="theme"/>
+    <ListDiv :theme="theme" />
+  </main>
 </template>
 
 <script></script>
@@ -30,11 +33,28 @@ watch(theme, (newTheme) => {
 @import "/src/assets/base.css";
 
 body {
-  transition: 0.2s ease all, left 0.2s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  transition: 0.2s ease all;
   font-family: "Roboto", sans-serif;
 }
 
 body.dark {
   background-color: var(--dark-bg);
+}
+
+main {
+  position: absolute;
+  left: 15vw;
+}
+
+h1 {
+  font-weight: 300;
+  text-align: center;
+  margin-top: 150px;
+  font-size: 2.7em !important;
+  margin-bottom: 100px;
+}
+
+h1.dark {
+  color: var(--dark-mode-text-color);
 }
 </style>

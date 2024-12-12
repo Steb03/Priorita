@@ -1,6 +1,7 @@
 :root {
   /* General styles */
-  --dark-bg: #1a1a1a;
+  --dark-bg: #121212;
+  --lighter-dark-bg: #242424;
   --dark-mode-text-color: #fff;
   --theme-main: #4a90e2;
   --theme-dark-blue: #03256c;

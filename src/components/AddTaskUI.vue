@@ -20,11 +20,15 @@ export default {
 #addTaskUI {
   max-width: 70%;
   height: 30vh;
-  margin-left: 15%;
   text-align: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
 }
 
 #addTaskUI.dark {
-  background-color: var(--dark-bg);
+  background-color: var(--lighter-dark-bg);
+  border-color: var(--border-color-dark);
 }
 </style>

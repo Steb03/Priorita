@@ -1,10 +1,32 @@
+<script setup>
+import { ref } from 'vue';
+
+// Initialize reactive variable for focus state
+let active = ref('not-active');
+
+// Handle focus event
+function onFocus() {
+  active.value = 'active'; // Update the reactive reference using `.value`
+}
+
+// Handle blur event
+function onBlur() {
+  active.value = 'not-active'; // Update the reactive reference using `.value`
+}
+
+// Optional: If you want to bind this input to some parent data (addTodo), define it here.
+const addTodo = ref('');
+</script>
+
 <template>
-  <div id="addTaskTextField" :class="theme">
+  <div id="addTaskTextField" :class="[theme, active]">
     <input
       type="text"
       id="addTaskInput"
       placeholder="Add something to your day..."
-      v-model="addTodo"
+      v-model="addTodo" 
+      @focus="onFocus"
+      @blur="onBlur"
       :class="theme"
     />
   </div>
@@ -32,9 +54,17 @@ export default {
 }
 
 #addTaskTextField.dark {
+  color: white;
+}
+
+#addTaskTextField.dark.not-active {
   background-color: var(--dark-bg);
   border-color: var(--border-color-dark);
   color: var(--dark-mode-text-color);
+}
+
+.active {
+  border-color: white;
 }
 
 input[type="text"]:focus {
