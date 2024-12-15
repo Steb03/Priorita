@@ -1,20 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 
-// Initialize reactive variable for focus state
 let active = ref('not-active');
 
-// Handle focus event
 function onFocus() {
-  active.value = 'active'; // Update the reactive reference using `.value`
+  active.value = 'active';
 }
 
-// Handle blur event
 function onBlur() {
-  active.value = 'not-active'; // Update the reactive reference using `.value`
+  active.value = 'not-active'; 
 }
 
-// Optional: If you want to bind this input to some parent data (addTodo), define it here.
 const addTodo = ref('');
 </script>
 
@@ -43,14 +39,14 @@ export default {
 
 #addTaskTextField {
   display: inline;
-  width: calc(fit-content + 10px);
   height: 37px;
-  padding: 10px 0px 12px 0px;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
   text-align: center;
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
 }
 
 #addTaskTextField.dark {
@@ -63,6 +59,10 @@ export default {
   color: var(--dark-mode-text-color);
 }
 
+#addTaskTextField.light.active {
+  border-color: var(--theme-blue-green);
+}
+
 .active {
   border-color: white;
 }
@@ -72,18 +72,19 @@ input[type="text"]:focus {
 }
 
 #addTaskInput {
-  width: 80%;
+  width: calc(40vw - 40px);
   border: none;
   background-color: #0000;
-  height: 100%;
+  height: 17px;
   border-radius: 4px;
   border-width: 1px;
   font-size: 1em;
   margin: 2px;
+  margin-top: 0px;
   padding: 10px;
 }
 
 #addTaskInput.dark {
-  color: var(--dark-mode-taxt-color);
+  color: var(--dark-mode-text-color);
 }
 </style>

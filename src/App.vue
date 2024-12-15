@@ -52,6 +52,7 @@ h1 {
   margin-top: 150px;
   font-size: 2.7em !important;
   margin-bottom: 100px;
+  max-width: 70vw;
 }
 
 h1.dark {

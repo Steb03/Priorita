@@ -18,13 +18,14 @@ export default {
 @import "/src/assets/base.css";
 
 #addTaskUI {
-  max-width: 70%;
+  width: 70%;
   height: 30vh;
   text-align: center;
   padding: 5px;
   border-style: solid;
   border-width: 1px;
   border-radius: 4px;
+  margin-left: calc((70vw - 70%) / 2)
 }
 
 #addTaskUI.dark {
