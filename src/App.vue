@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import Navbar from "@/components/Navbar.vue";
 import ListDiv from "@/components/ListDiv.vue";
-import AddTaskUI from '@/components/AddTaskUI.vue';
+import AddTaskUI from '@/components/AddTaskForm.vue';
 
 let theme = ref("light");
 

@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 
 let active = ref('not-active');
+let newTodo = ref('');
 
 function onFocus() {
   active.value = 'active';
@@ -11,7 +12,10 @@ function onBlur() {
   active.value = 'not-active'; 
 }
 
-const addTodo = ref('');
+function addTodo() {
+  console.log(newTodo.value);
+}
+
 </script>
 
 <template>
@@ -20,9 +24,10 @@ const addTodo = ref('');
       type="text"
       id="addTaskInput"
       placeholder="Add something to your day..."
-      v-model="addTodo" 
+      v-model="newTodo" 
       @focus="onFocus"
       @blur="onBlur"
+      @keyup.enter="addTodo()"
       :class="theme"
     />
   </div>
